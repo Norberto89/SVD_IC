@@ -1,0 +1,47 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Glow -->
+  <circle cx="32" cy="32" r="30" fill="url(#bg_glow)" fill-opacity="0.1"/>
+  
+  <!-- SVD Decomposition Visual -->
+  <!-- Matrix U (Orthogonal, stylized as vertical bars) -->
+  <rect x="12" y="16" width="8" height="32" rx="2" fill="url(#grad_u)" />
+  
+  <!-- Matrix Sigma (Diagonal, the essence of SVD) -->
+  <g filter="url(#glow)">
+    <circle cx="28" cy="24" r="3" fill="#818CF8" />
+    <circle cx="36" cy="32" r="3" fill="#C084FC" />
+    <circle cx="44" cy="40" r="3" fill="#F472B6" />
+    <path d="M28 24L44 40" stroke="url(#grad_sigma)" stroke-width="1.5" stroke-dasharray="2 2" />
+  </g>
+  
+  <!-- Matrix V^T (Orthogonal, stylized as horizontal bars) -->
+  <rect x="24" y="46" width="28" height="6" rx="2" fill="url(#grad_v)" />
+
+  <defs>
+    <filter id="glow" x="20" y="16" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <linearGradient id="bg_glow" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" />
+      <stop offset="1" stop-color="#EC4899" />
+    </linearGradient>
+
+    <linearGradient id="grad_u" x1="12" y1="16" x2="20" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" />
+      <stop offset="1" stop-color="#3730A3" />
+    </linearGradient>
+
+    <linearGradient id="grad_sigma" x1="28" y1="24" x2="44" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818CF8" />
+      <stop offset="0.5" stop-color="#C084FC" />
+      <stop offset="1" stop-color="#F472B6" />
+    </linearGradient>
+
+    <linearGradient id="grad_v" x1="24" y1="46" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EC4899" />
+      <stop offset="1" stop-color="#BE185D" />
+    </linearGradient>
+  </defs>
+</svg>
